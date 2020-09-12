@@ -1,0 +1,11 @@
+<MKM version="2.0" imageFileUrl="file:///Users/zhangqi/Desktop/IMG_0959.PNG">
+  <Marks>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="6710886" offsetX="25" offsetY="10" x="197" y="254"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="11908533" offsetX="25" offsetY="10" x="212" y="346"/>
+    <LengthMark direction="3" color="16711680" length="36" x="153" y="307"/>
+    <LengthMark direction="3" color="16711680" length="135" x="184" y="384"/>
+    <LengthMark direction="3" color="16711680" length="40" x="326" y="341"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="3355443" offsetX="25" offsetY="10" x="192" y="277"/>
+    <LengthMark direction="3" color="16711680" length="60" x="119" y="249"/>
+  </Marks>
+</MKM>
