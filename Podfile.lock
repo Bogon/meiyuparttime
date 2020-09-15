@@ -45,6 +45,15 @@ PODS:
     - RxSwift (~> 5.1)
   - ObjectMapper (4.2.0)
   - paper-onboarding (6.1.5)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
     - Reusable/View (= 4.1.1)
@@ -92,6 +101,7 @@ DEPENDENCIES:
   - "NSObject+Rx (~> 5.1.0)"
   - ObjectMapper (~> 4.2.0)
   - paper-onboarding
+  - PromiseKit
   - Reusable
   - RxAlamofire (~> 5.5.0)
   - RxBlocking (~> 5.1.1)
@@ -125,6 +135,7 @@ SPEC REPOS:
     - "NSObject+Rx"
     - ObjectMapper
     - paper-onboarding
+    - PromiseKit
     - Reusable
     - RxAlamofire
     - RxBlocking
@@ -159,6 +170,7 @@ SPEC CHECKSUMS:
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   paper-onboarding: fede1799b1da6988f3788e3b71654583c6f3bce1
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   RxAlamofire: 22287c710761466d0123504c566a8381520d4d63
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
@@ -170,6 +182,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftProtobuf: bec1ae7d686ff73dd09d79866154f4970b891410
 
-PODFILE CHECKSUM: 45ef40c53a7c1ac88ad89c04468663f00d235c35
+PODFILE CHECKSUM: 9e1c775ef999bd261f07956be510ab2d67a3674d
 
 COCOAPODS: 1.9.3

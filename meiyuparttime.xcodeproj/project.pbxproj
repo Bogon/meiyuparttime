@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D009B152510F4B7009D95AF /* UpdateInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D009B142510F4B7009D95AF /* UpdateInfoAPI.swift */; };
+		3D009B172510F4CE009D95AF /* UpdateInfoResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D009B162510F4CE009D95AF /* UpdateInfoResponseModel.swift */; };
+		3D009B192510F4EC009D95AF /* UpdateInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D009B182510F4EC009D95AF /* UpdateInfoViewModel.swift */; };
+		3D009B1B2510F503009D95AF /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D009B1A2510F503009D95AF /* UpdateController.swift */; };
+		3D009B1D2510F59F009D95AF /* UpdateController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D009B1C2510F59F009D95AF /* UpdateController+Layout.swift */; };
 		3D15A60124F531B1009E39E6 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D15A5F624F531B1009E39E6 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3D15A60224F531B1009E39E6 /* WkwebViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15A5F824F531B1009E39E6 /* WkwebViewConfig.swift */; };
 		3D15A60324F531B1009E39E6 /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 3D15A5F924F531B1009E39E6 /* WKJSPOST.html */; };
@@ -120,7 +125,6 @@
 		3DF6BCBC24FAA92000026345 /* JobContentFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6BCBB24FAA92000026345 /* JobContentFooterView.xib */; };
 		96262E1555EB1EEE981800B4 /* Pods_meiyuparttime_meiyuparttimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772C635C1C7EE4B1307469A6 /* Pods_meiyuparttime_meiyuparttimeUITests.framework */; };
 		9B571E023830F0A95AE73ABD /* Pods_meiyuparttimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945669FCCEB0E8D9AA9ABF85 /* Pods_meiyuparttimeTests.framework */; };
-		BDF718B7155773A2AE02F5FB /* Pods_meiyuparttime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC45C75487F0CB8F976B52A /* Pods_meiyuparttime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +145,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D009B142510F4B7009D95AF /* UpdateInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfoAPI.swift; sourceTree = "<group>"; };
+		3D009B162510F4CE009D95AF /* UpdateInfoResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfoResponseModel.swift; sourceTree = "<group>"; };
+		3D009B182510F4EC009D95AF /* UpdateInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfoViewModel.swift; sourceTree = "<group>"; };
+		3D009B1A2510F503009D95AF /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
+		3D009B1C2510F59F009D95AF /* UpdateController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateController+Layout.swift"; sourceTree = "<group>"; };
 		3D15A5F424F531B1009E39E6 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		3D15A5F524F531B1009E39E6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		3D15A5F624F531B1009E39E6 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
@@ -263,6 +272,7 @@
 		3DF6BCB724FA510500026345 /* JobTypeContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTypeContentView.xib; sourceTree = "<group>"; };
 		3DF6BCB924FAA91800026345 /* JobContentFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobContentFooterView.swift; sourceTree = "<group>"; };
 		3DF6BCBB24FAA92000026345 /* JobContentFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobContentFooterView.xib; sourceTree = "<group>"; };
+		3DFF702F2510FEE50057F32A /* 美豫直聘.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "美豫直聘.entitlements"; sourceTree = "<group>"; };
 		4732FD481434527D4C6F1602 /* Pods-meiyuparttime-meiyuparttimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiyuparttime-meiyuparttimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-meiyuparttime-meiyuparttimeUITests/Pods-meiyuparttime-meiyuparttimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		491B9345422EEFCC83EF98A9 /* Pods-meiyuparttime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiyuparttime.release.xcconfig"; path = "Target Support Files/Pods-meiyuparttime/Pods-meiyuparttime.release.xcconfig"; sourceTree = "<group>"; };
 		5A6C1C384D37E12CB1B18278 /* Pods-meiyuparttimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiyuparttimeTests.debug.xcconfig"; path = "Target Support Files/Pods-meiyuparttimeTests/Pods-meiyuparttimeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -279,7 +289,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF718B7155773A2AE02F5FB /* Pods_meiyuparttime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +311,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D009B0E2510F491009D95AF /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				3D009B132510F4AF009D95AF /* API */,
+				3D009B0F2510F491009D95AF /* ViewModel */,
+				3D009B102510F491009D95AF /* Controller */,
+				3D009B112510F491009D95AF /* Model */,
+				3D009B122510F491009D95AF /* View */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		3D009B0F2510F491009D95AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D009B182510F4EC009D95AF /* UpdateInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D009B102510F491009D95AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D009B1A2510F503009D95AF /* UpdateController.swift */,
+				3D009B1C2510F59F009D95AF /* UpdateController+Layout.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D009B112510F491009D95AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D009B162510F4CE009D95AF /* UpdateInfoResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D009B122510F491009D95AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D009B132510F4AF009D95AF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3D009B142510F4B7009D95AF /* UpdateInfoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		3D15A5D724F5315D009E39E6 /* Handle */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +382,7 @@
 		3D15A5D824F5315D009E39E6 /* Moudle */ = {
 			isa = PBXGroup;
 			children = (
+				3D009B0E2510F491009D95AF /* Update */,
 				3DDDDE24250C5FEE00CB5751 /* OnBoarding */,
 				3DDDDE01250C523200CB5751 /* LoginSignUp */,
 				3D9F157924FFD940001BBD1B /* JobTypeVos */,
@@ -721,6 +783,7 @@
 		3D59219D24F0A98400F4B282 /* meiyuparttime */ = {
 			isa = PBXGroup;
 			children = (
+				3DFF702F2510FEE50057F32A /* 美豫直聘.entitlements */,
 				3D15A5F224F5315D009E39E6 /* Extentions */,
 				3D15A5D724F5315D009E39E6 /* Handle */,
 				3D15A5D824F5315D009E39E6 /* Moudle */,
@@ -1315,6 +1378,8 @@
 				3D5FC59224F6A87E00ED7FEA /* Dictionary+Extention.swift in Sources */,
 				3D15A60424F531B1009E39E6 /* WebView.swift in Sources */,
 				3D5FC5B324F6AA7300ED7FEA /* UserInfoHandle.swift in Sources */,
+				3D009B192510F4EC009D95AF /* UpdateInfoViewModel.swift in Sources */,
+				3D009B152510F4B7009D95AF /* UpdateInfoAPI.swift in Sources */,
 				3D15A60224F531B1009E39E6 /* WkwebViewConfig.swift in Sources */,
 				3D7EEE59250A781B000734FC /* SettingHeaderView.swift in Sources */,
 				3D5FC59424F6A88B00ED7FEA /* Date+Extention.swift in Sources */,
@@ -1338,6 +1403,7 @@
 				3D15A61024F532EC009E39E6 /* Images.swift in Sources */,
 				3D7EEE64250A7FA4000734FC /* ProcotolController+Layout.swift in Sources */,
 				3D15A61324F53F9B009E39E6 /* JobListController.swift in Sources */,
+				3D009B1D2510F59F009D95AF /* UpdateController+Layout.swift in Sources */,
 				3D15A61524F53FE8009E39E6 /* JobListController+Layout.swift in Sources */,
 				3D5FC5C324F6B58000ED7FEA /* JobListViewModel.swift in Sources */,
 				3D28B81E24FB37BE00C6C3A7 /* CityJobTypeVosAPI.swift in Sources */,
@@ -1357,6 +1423,7 @@
 				3DDDDE1B250C523300CB5751 /* UserInfoModel.swift in Sources */,
 				3D7EEE5F250A7851000734FC /* SettingResponseModel.swift in Sources */,
 				3D5FC5A024F6A8E300ED7FEA /* UIView+Extention.swift in Sources */,
+				3D009B172510F4CE009D95AF /* UpdateInfoResponseModel.swift in Sources */,
 				3D5FC5C124F6B2BF00ED7FEA /* JobListResponseModel.swift in Sources */,
 				3D7799552503196D0073BE66 /* JobDetailViewModel.swift in Sources */,
 				3DF6BCBA24FAA91800026345 /* JobContentFooterView.swift in Sources */,
@@ -1367,6 +1434,7 @@
 				3D5FC5B524F6AC4E00ED7FEA /* JobTypeAPI.swift in Sources */,
 				3D9F158F24FFFDD0001BBD1B /* JobTypeVosPanelView.swift in Sources */,
 				3D5FC5B724F6ACE300ED7FEA /* JobTypeViewModel.swift in Sources */,
+				3D009B1B2510F503009D95AF /* UpdateController.swift in Sources */,
 				3DC42B3824FABA1E0082376F /* JobContentEmptyView.swift in Sources */,
 				3D28B82224FB3BC400C6C3A7 /* CityInfoHandle.swift in Sources */,
 				3D15A61B24F5404A009E39E6 /* SettingController.swift in Sources */,
@@ -1552,7 +1620,9 @@
 			baseConfigurationReference = 5D47512F21C825BE1FEE78E7 /* Pods-meiyuparttime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "meiyuparttime/美豫直聘.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = XJ3H7NMPHW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = meiyuparttime/Info.plist;
@@ -1561,6 +1631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.senyas.meiyuparttime;
 				PRODUCT_NAME = "美豫直聘";
 				SWIFT_OBJC_BRIDGING_HEADER = "meiyuparttime/meiyuparttime-Bridging-Header.h";
@@ -1574,7 +1645,9 @@
 			baseConfigurationReference = 491B9345422EEFCC83EF98A9 /* Pods-meiyuparttime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "meiyuparttime/美豫直聘.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = XJ3H7NMPHW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = meiyuparttime/Info.plist;
@@ -1583,6 +1656,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.senyas.meiyuparttime;
 				PRODUCT_NAME = "美豫直聘";
 				SWIFT_OBJC_BRIDGING_HEADER = "meiyuparttime/meiyuparttime-Bridging-Header.h";

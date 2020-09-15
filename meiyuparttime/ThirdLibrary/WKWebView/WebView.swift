@@ -214,8 +214,6 @@ extension WebView: WKNavigationDelegate{
             //拨打电话
             //兼容安卓的服务器写法:<a class = "mobile" href = "tel://电话号码"></a>
             //或者:<a class = "mobile" href = "tel:电话号码"></a>
-            let _some_url: String = (GTMBase64.decode("cXE=")?.base64EncodedString())!
-            let _null_url: String = (GTMBase64.decode("d2VpeGlu")?.base64EncodedString())!
             if requestURL.hasPrefix("tel://") {
                 //取消WKWebView 打电话请求
                 decisionHandler(.cancel);
@@ -223,11 +221,11 @@ extension WebView: WKNavigationDelegate{
                 if let mobileURL:URL = URL(string: requestURL) {
                     UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
                 }
-            } else if requestURL.contains(_some_url) {
+            } else if requestURL.contains("qq") {
                if let mobileURL:URL = URL(string: requestURL) {
                    UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
                }
-            } else if requestURL.contains(_null_url) {
+            } else if requestURL.contains("weixin") {
                if let mobileURL:URL = URL(string: requestURL) {
                    UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
                }

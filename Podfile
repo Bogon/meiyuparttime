@@ -14,6 +14,7 @@ target 'meiyuparttime' do
   pod 'RxAlamofire', '~> 5.5.0'                   # RxSwift HTTP networking in Swift Alamofire
   pod 'NSObject+Rx', '~> 5.1.0'                   # Handy RxSwift extensions on NSObject.
   pod 'RxDataSources'
+  pod 'PromiseKit'
   
 # Networking
   pod 'Moya', '~> 14.0.0'
