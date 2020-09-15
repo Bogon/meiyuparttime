@@ -120,6 +120,7 @@
 		3DF6BCBC24FAA92000026345 /* JobContentFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF6BCBB24FAA92000026345 /* JobContentFooterView.xib */; };
 		96262E1555EB1EEE981800B4 /* Pods_meiyuparttime_meiyuparttimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772C635C1C7EE4B1307469A6 /* Pods_meiyuparttime_meiyuparttimeUITests.framework */; };
 		9B571E023830F0A95AE73ABD /* Pods_meiyuparttimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945669FCCEB0E8D9AA9ABF85 /* Pods_meiyuparttimeTests.framework */; };
+		BDF718B7155773A2AE02F5FB /* Pods_meiyuparttime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC45C75487F0CB8F976B52A /* Pods_meiyuparttime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF718B7155773A2AE02F5FB /* Pods_meiyuparttime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

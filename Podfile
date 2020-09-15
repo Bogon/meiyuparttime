@@ -23,7 +23,11 @@ target 'meiyuparttime' do
   
 # Data Store
   pod 'AwesomeCache', '~> 5.0'
-  
+  pod 'LeanCloud'
+
+  pod 'JCore', '2.1.4-noidfa' # 必选项
+  pod 'JPush', '3.2.4-noidfa' # 必选项
+
 # UI
   pod 'SnapKit'                                    # Harness the power of auto layout
   pod 'Hue'
