@@ -6,78 +6,77 @@
 //  Copyright © 2020 Senyas Technology Co., Ltd. All rights reserved.
 //
 
-import UIKit
 import AMScrollingNavbar
 import MJRefresh
-import RxCocoa
-import RxSwift
-import RxDataSources
 import Reusable
+import RxCocoa
+import RxDataSources
+import RxSwift
+import UIKit
 
 class JobDetailController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate {
-    
     let bag = DisposeBag()
-    
+
     private var viewModel: JobDetailViewModel?
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
+
     private var infoModel: JobInfoModel?
-    
-    var jobVosInfoModel: JobVosInfoModel = JobVosInfoModel()
-    
+
+    var jobVosInfoModel = JobVosInfoModel()
+
     /// 求职人介绍视图
-    var employeeHeaderView: EmployeeHeaderView = EmployeeHeaderView.instance()!
+    var employeeHeaderView = EmployeeHeaderView.instance()!
     /// 求职人个人优势
-    var advantageView: AdvantageView = AdvantageView.instance()!
+    var advantageView = AdvantageView.instance()!
     /// 求职人期望
-    var expectVosView: ExpectVosView = ExpectVosView.instance()!
+    var expectVosView = ExpectVosView.instance()!
     /// 求职人工作经历
-    var jobVoView: JobVoView = JobVoView.instance()!
+    var jobVoView = JobVoView.instance()!
     /// 求职人教育经历
-    var schoolVoView: SchoolVoView = SchoolVoView.instance()!
+    var schoolVoView = SchoolVoView.instance()!
     /// 联系求职者
-    var bottomBarView: BottomBarView = BottomBarView.instance()!
-    
-    
-    // MARK:-  职位列表
+    var bottomBarView = BottomBarView.instance()!
+
+    // MARK: -  职位列表
+
     lazy var contentScrollView: UIScrollView = {
-        var _contentScrollView: UIScrollView = UIScrollView()
+        var _contentScrollView = UIScrollView()
         _contentScrollView.backgroundColor = .clear
         return _contentScrollView
     }()
-    
+
     init(jobInfo value: JobInfoModel) {
         super.init(nibName: nil, bundle: nil)
         infoModel = value
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         navigationItem.title = "\(infoModel?.coachNickname ?? "-")"
-        
+
         // 初始化ViewModel
         viewModel = JobDetailViewModel(input: (headerRefresh: (contentScrollView.mj_header?.rx.refreshing.asDriver())!, detailID: infoModel!.coachDetailId), dependency: (disposeBag: bag, networkService: JobDetailNetworkService()))
-        
+
         load()
 
         // 下拉刷新状态结束的绑定
         viewModel!.endHeaderRefreshing
             .drive(contentScrollView.mj_header!.rx.endRefreshing)
             .disposed(by: bag)
-        
     }
 
     // Enable the navbar scrolling
@@ -94,31 +93,27 @@ class JobDetailController: ScrollingNavigationViewController, ScrollingNavigatio
             navigationController.expandOnActive = false
         }
     }
-    
 }
 
 extension JobDetailController: BottomBarViewDelegate {
-    
     func connectedTaAction(phone value: String) {
-        //用这个API打电话
-        if let mobileURL:URL = URL(string: "tel://\(value)") {
+        // 用这个API打电话
+        if let mobileURL = URL(string: "tel://\(value)") {
             UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
         }
     }
 }
 
 private extension JobDetailController {
-    
     /// 1.请求数据
     func load() {
-        
-        _ = viewModel?.tableData.asObservable().bind(onNext: { [weak self] (job_detail_response_section) in
-            
+        _ = viewModel?.tableData.asObservable().bind(onNext: { [weak self] job_detail_response_section in
+
             /// 数据源绑定
             guard let _jobDetailResponseModel = job_detail_response_section.first?.items.first else {
                 return
             }
-            
+
             /// 头部个人信息数据绑定
             let resumeVo: ResumeVoInfoModel = _jobDetailResponseModel.data?.resumeVo ?? ResumeVoInfoModel()
             self?.employeeHeaderView.avatar_url = resumeVo.coachAvatarUrl ?? ""
@@ -152,8 +147,7 @@ private extension JobDetailController {
             /// 添加联系方式
             self?.bottomBarView.isHidden = false
             self?.bottomBarView.phone_number = resumeVo.coachPhone ?? "13442616834"
-            
+
         })
     }
-    
 }

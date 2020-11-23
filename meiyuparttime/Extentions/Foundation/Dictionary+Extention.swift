@@ -9,7 +9,6 @@
 import Foundation
 
 extension Dictionary {
-    
     /// SwifterSwift: JSON Data from dictionary.
     ///
     /// - Parameter prettify: set true to prettify data (default is false).
@@ -21,5 +20,4 @@ extension Dictionary {
         let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions()
         return try? JSONSerialization.data(withJSONObject: self, options: options)
     }
-    
 }

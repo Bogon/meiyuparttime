@@ -14,11 +14,9 @@ extension HistoryController {
         /// 关注新职位人员
         NotificationCenter.default.rx
             .notification(NSNotification.Name.attentionUser)
-            .takeUntil(self.rx.deallocated) /// 页面销毁自动移除通知监听
-            .subscribe(onNext: { [weak self] notification in
+            .takeUntil(rx.deallocated) /// 页面销毁自动移除通知监听
+            .subscribe(onNext: { [weak self] _ in
                 self?.reload()
             }).disposed(by: bag)
     }
-
 }
-

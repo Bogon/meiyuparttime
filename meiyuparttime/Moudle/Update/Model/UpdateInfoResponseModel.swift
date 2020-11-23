@@ -10,21 +10,17 @@ import Foundation
 import ObjectMapper
 
 class UpdateInfoResponseModel: NSObject, Mappable {
-
     var isenable: Bool?
     var opencontent: String?
-    
-    required init?(map: Map) {
-        
-    }
-    
+
+    required init?(map _: Map) {}
+
     func mapping(map: Map) {
-        isenable            <- map["isenable"]
-        opencontent         <- map["opencontent"]
+        isenable <- map["isenable"]
+        opencontent <- map["opencontent"]
     }
-    
+
     override init() {
         super.init()
     }
-
 }

@@ -6,11 +6,10 @@
 //  Copyright © 2020 Senyas Technology Co., Ltd. All rights reserved.
 //
 
-import UIKit
 import DeviceKit
+import UIKit
 
 extension UIImage {
-
     /// 根据传入参数生成指定大小和颜色的图片
     ///
     /// - parameter color: 生成图片的颜色
@@ -18,8 +17,7 @@ extension UIImage {
     ///
     /// - returns: 一个UIImage实例.
     static func getImage(WithColor color: UIColor, size: CGSize) -> UIImage {
-       
-        let rect: CGRect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         // 开启位图上下文
         UIGraphicsBeginImageContext(rect.size)
         // 获取位图上下文
@@ -32,8 +30,7 @@ extension UIImage {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         // 结束上下文
         UIGraphicsEndImageContext()
-        
+
         return image
     }
 }
-

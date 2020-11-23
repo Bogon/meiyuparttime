@@ -6,67 +6,68 @@
 //  Copyright © 2020 Senyas Technology Co., Ltd. All rights reserved.
 //
 
-import UIKit
 import AMScrollingNavbar
 import MJRefresh
-import RxCocoa
-import RxSwift
-import RxDataSources
 import Reusable
+import RxCocoa
+import RxDataSources
+import RxSwift
+import UIKit
 
-class HistoryController: ScrollingNavigationViewController , ScrollingNavigationControllerDelegate {
-
+class HistoryController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate {
     let bag = DisposeBag()
-    
+
     fileprivate var history_view_model: HistoryViewModel?
-    
+
     /// 空数据视图
-    var jobContentEmptyView: JobContentEmptyView = JobContentEmptyView.instance()!
-    // MARK:-  职位列表
+    var jobContentEmptyView = JobContentEmptyView.instance()!
+
+    // MARK: -  职位列表
+
     lazy var contentTableView: UITableView = {
-        var contentTableView: UITableView = UITableView()
+        var contentTableView = UITableView()
         contentTableView.backgroundColor = .clear
         contentTableView.separatorStyle = .none
         return contentTableView
     }()
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         navigationItem.title = "Attention"
-        
+
         registerNotificationCenter()
-        
+
         history_view_model = HistoryViewModel(input: (contentTableView.mj_header?.rx.refreshing.asDriver())!, dependency: (disposeBag: bag, networkService: HistoryNetworkService()))
-        
+
         load()
-        
+
         // 下拉刷新状态结束的绑定
         history_view_model!.endHeaderRefreshing
             .drive(contentTableView.mj_header!.rx.endRefreshing)
             .disposed(by: bag)
-        
+
         contentTableView.rx.itemSelected.bind { [weak self] indexPath in
             self?.contentTableView.deselectRow(at: indexPath, animated: true)
             let jobListSection: JobInfoListSection = (self?.history_view_model!.tableData.value[indexPath.section])!
             let jobInfoModel: JobInfoModel = jobListSection.items[indexPath.row] as JobInfoModel
 
-            let jobDetailController: JobDetailController = JobDetailController(jobInfo: jobInfoModel)
+            let jobDetailController = JobDetailController(jobInfo: jobInfoModel)
             jobDetailController.hidesBottomBarWhenPushed = true
             self?.navigationController?.pushViewController(jobDetailController, animated: true)
         }.disposed(by: bag)
-        
     }
-    
+
     // Enable the navbar scrolling
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -81,26 +82,23 @@ class HistoryController: ScrollingNavigationViewController , ScrollingNavigation
             navigationController.expandOnActive = false
         }
     }
-    
+
     /// 重新加载数据
     func reload() {
         history_view_model?.load()
     }
-
 }
 
 extension HistoryController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return JobTableViewCell.layoutHeight
     }
 }
 
 private extension HistoryController {
-    
     /// 1.保证网络正常的情况下加载骨架动画和请求数据
     func load() {
-        let dataSource =  RxTableViewSectionedReloadDataSource<JobInfoListSection>(configureCell: { ds, tv, ip, item in
+        let dataSource = RxTableViewSectionedReloadDataSource<JobInfoListSection>(configureCell: { _, tv, ip, item in
             let cell: JobTableViewCell = tv.dequeueReusableCell(for: ip)
             cell.selectionStyle = .none
             cell.avatar_url = item.coachAvatarUrl ?? ""
@@ -113,19 +111,19 @@ private extension HistoryController {
             cell.job_advan = item.coachResume?.length == 0 ? "这个人很懒，什么也没写~" : item.coachResume ?? ""
             return cell
         })
-        
-        _ = history_view_model!.tableData.asObservable().bind(to: (contentTableView.rx.items(dataSource: dataSource)))
-        
+
+        _ = history_view_model!.tableData.asObservable().bind(to: contentTableView.rx.items(dataSource: dataSource))
+
         _ = history_view_model!.tableData.asObservable().bind(onNext: { [weak self] job_info_list in
-                if (job_info_list.count == 0) {
+            if job_info_list.count == 0 {
+                self?.jobContentEmptyView.isHidden = false
+            } else {
+                if (job_info_list.first?.items.count)! == 0 {
                     self?.jobContentEmptyView.isHidden = false
                 } else {
-                    if ((job_info_list.first?.items.count)! == 0) {
-                        self?.jobContentEmptyView.isHidden = false
-                    } else {
-                        self?.jobContentEmptyView.isHidden = true
-                    }
+                    self?.jobContentEmptyView.isHidden = true
                 }
+            }
         })
     }
 }

@@ -8,11 +8,10 @@
 
 import Foundation
 
-fileprivate let FirstLaunchValue: String = "FirstLaunchValue"
-fileprivate let EverLaunchValue: String = "EverLaunchValue"
+private let FirstLaunchValue: String = "FirstLaunchValue"
+private let EverLaunchValue: String = "EverLaunchValue"
 
 struct FirstLaunch {
-    
     /// func is first launch
     static func firstLaunch() {
         if UserDefaults.standard.bool(forKey: EverLaunchValue) {
@@ -26,7 +25,6 @@ struct FirstLaunch {
 
     /// get is first launch
     static func isFirstLaunch() -> Bool {
-       return UserDefaults.standard.bool(forKey: FirstLaunchValue)
+        return UserDefaults.standard.bool(forKey: FirstLaunchValue)
     }
-    
 }

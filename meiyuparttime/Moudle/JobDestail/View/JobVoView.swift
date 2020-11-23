@@ -9,15 +9,14 @@
 import UIKit
 
 class JobVoView: UIView {
+    @IBOutlet var icon_imageview: UIImageView!
+    @IBOutlet var title_label: UILabel!
+    @IBOutlet var compony_label: UILabel!
+    @IBOutlet var year_label: UILabel!
+    @IBOutlet var positon_label: UILabel!
+    @IBOutlet var detail_label: UILabel!
+    @IBOutlet var line: UIView!
 
-    @IBOutlet weak var icon_imageview: UIImageView!
-    @IBOutlet weak var title_label: UILabel!
-    @IBOutlet weak var compony_label: UILabel!
-    @IBOutlet weak var year_label: UILabel!
-    @IBOutlet weak var positon_label: UILabel!
-    @IBOutlet weak var detail_label: UILabel!
-    @IBOutlet weak var line: UIView!
-    
     /// 公司名称
     var compony: String = "无" {
         didSet {
@@ -28,7 +27,7 @@ class JobVoView: UIView {
             compony_label.text = _compony
         }
     }
-    
+
     /// 工作区间
     var job_year: String = "无" {
         didSet {
@@ -39,7 +38,7 @@ class JobVoView: UIView {
             year_label.text = _job_year
         }
     }
-    
+
     /// 职位
     var positon: String = "无" {
         didSet {
@@ -50,7 +49,7 @@ class JobVoView: UIView {
             positon_label.text = _positon
         }
     }
-    
+
     /// 工作内容
     var job_detail: String = "无" {
         didSet {
@@ -62,8 +61,9 @@ class JobVoView: UIView {
             setNeedsLayout()
         }
     }
-    
-    // MARK:- 创建视图
+
+    // MARK: - 创建视图
+
     class func instance() -> JobVoView? {
         let nibView = Bundle.main.loadNibNamed("JobVoView", owner: nil, options: nil)
         if let view = nibView?.first as? JobVoView {
@@ -72,84 +72,80 @@ class JobVoView: UIView {
         }
         return nil
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
         let screen_width: CGFloat = UIScreen.main.bounds.size.width
-        
-        icon_imageview.snp.makeConstraints { (make) in
+
+        icon_imageview.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(25)
             make.top.equalTo(self.snp.top).offset(23)
             make.size.equalTo(CGSize(width: 19, height: 19))
         }
-        
-        title_label.snp.makeConstraints { (make) in
+
+        title_label.snp.makeConstraints { make in
             make.left.equalTo(icon_imageview.snp.right).offset(5)
             make.top.equalTo(self.snp.top).offset(20)
             make.size.equalTo(CGSize(width: 120, height: 25))
         }
-        
+
         var _compony_size: CGSize = "\(compony)  ".sizeWithConstrainedWidth(screen_width - 150, font: .systemFont(ofSize: 16, weight: .medium))
         _compony_size.height += 2
-        
-        compony_label.snp.remakeConstraints { (make) in
+
+        compony_label.snp.remakeConstraints { make in
             make.left.equalTo(self.snp.left).offset(25)
             make.top.equalTo(title_label.snp.bottom).offset(15)
             make.size.equalTo(_compony_size)
         }
-        
-        year_label.snp.makeConstraints { (make) in
+
+        year_label.snp.makeConstraints { make in
             make.right.equalTo(self.snp.right).offset(-25)
             make.top.equalTo(title_label.snp.bottom).offset(15)
             make.size.equalTo(CGSize(width: 90, height: 20))
         }
-        
-        positon_label.snp.makeConstraints { (make) in
+
+        positon_label.snp.makeConstraints { make in
             make.left.equalTo(self.snp.left).offset(25)
             make.top.equalTo(compony_label.snp.bottom).offset(15)
             make.size.equalTo(CGSize(width: screen_width - 50, height: 25))
         }
-        
+
         var _detail_size: CGSize = "\(job_detail)  ".sizeWithConstrainedWidth(screen_width - 50, font: .systemFont(ofSize: 15))
         _detail_size.height += 2
         if _detail_size.width != (screen_width - 50) {
             _detail_size.width = screen_width - 50
         }
-        detail_label.snp.remakeConstraints { (make) in
+        detail_label.snp.remakeConstraints { make in
             make.left.equalTo(self.snp.left).offset(25)
             make.top.equalTo(positon_label.snp.bottom).offset(15)
             make.size.equalTo(_detail_size)
         }
-        
-        line.snp.makeConstraints { (make) in
+
+        line.snp.makeConstraints { make in
             make.centerX.equalTo(self.snp.centerX)
             make.bottom.equalTo(self.snp.bottom)
             make.size.equalTo(CGSize(width: screen_width - 40, height: 1))
         }
-        
     }
-    
+
     static var default_height: CGFloat {
         return 260
     }
-    
+
     static func getJobVoHeight(jobVoModel value: JobVosInfoModel) -> CGFloat {
-        
         let screen_width: CGFloat = UIScreen.main.bounds.size.width
         var _compony_size: CGSize = "\(value.jobName ?? "-")  ".sizeWithConstrainedWidth(screen_width - 150, font: .systemFont(ofSize: 15, weight: .medium))
         _compony_size.height += 2
-        
+
         var _detail_size: CGSize = "\(value.jobContent ?? "-")  ".sizeWithConstrainedWidth(screen_width - 50, font: .systemFont(ofSize: 15))
         _detail_size.height += 2
-        
+
         let __height: CGFloat = 136 + _compony_size.height + _detail_size.height
         return __height
     }
-    
 }

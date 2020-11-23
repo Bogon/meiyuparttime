@@ -15,7 +15,6 @@ struct SettingListSection {
 }
 
 extension SettingListSection: SectionModelType {
-    
     typealias Item = SettingItemInfoModel
 
     init(original: SettingListSection, items: [SettingListSection.Item]) {
@@ -26,18 +25,13 @@ extension SettingListSection: SectionModelType {
 
 /// 设置数据模型
 struct SettingItemInfoModel: Mappable {
-    
     var type: SettingType?
     var is_refresh: Bool?
-    
-    init?(map: Map) {
-        
-    }
-    
+
+    init?(map _: Map) {}
+
     mutating func mapping(map: Map) {
-        type                <- map["type"]
-        is_refresh          <- map["is_refresh"]
+        type <- map["type"]
+        is_refresh <- map["is_refresh"]
     }
-
 }
-

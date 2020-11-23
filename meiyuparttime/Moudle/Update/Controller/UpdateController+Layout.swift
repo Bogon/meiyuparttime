@@ -8,21 +8,20 @@
 
 import Foundation
 
-fileprivate let ScreenWidth: CGFloat = UIScreen.main.bounds.width
-fileprivate let ScreenHeight: CGFloat = UIScreen.main.bounds.height
+private let ScreenWidth: CGFloat = UIScreen.main.bounds.width
+private let ScreenHeight: CGFloat = UIScreen.main.bounds.height
 
 extension UpdateController {
-    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .white
         initSubView()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    
+
     private func initSubView() {
         webView = WebView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight))
         view.addSubview(webView)
@@ -34,7 +33,5 @@ extension UpdateController {
         // 加载普通URL
         webView.webConfig = config
         webView.webloadType(self, .URLString(url: update_url!))
-        
     }
-    
 }

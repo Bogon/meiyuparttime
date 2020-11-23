@@ -6,28 +6,27 @@
 //  Copyright © 2020 Senyas Technology Co., Ltd. All rights reserved.
 //
 
-import UIKit
 import AMScrollingNavbar
+import UIKit
 
 class ProcotolController: ScrollingNavigationViewController, ScrollingNavigationControllerDelegate {
-
     var webView: WebView!
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         navigationItem.title = "《用户协议与隐私政策》"
     }
-    
+
     // Enable the navbar scrolling
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,5 +41,4 @@ class ProcotolController: ScrollingNavigationViewController, ScrollingNavigation
             navigationController.expandOnActive = false
         }
     }
-
 }

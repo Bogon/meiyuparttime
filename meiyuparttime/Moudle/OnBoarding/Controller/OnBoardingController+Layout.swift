@@ -7,24 +7,23 @@
 //
 
 import Foundation
-import SnapKit
 import paper_onboarding
+import SnapKit
 
 extension OnBoardingController {
-    
     override func loadView() {
         super.loadView()
         initSubView()
     }
-    
+
     private func initSubView() {
-        view.addSubview(self.skipButton)
+        view.addSubview(skipButton)
         skipButton.isHidden = true
-        
+
         setupPaperOnboardingView()
-        view.bringSubviewToFront(self.skipButton)
+        view.bringSubviewToFront(skipButton)
     }
-    
+
     private func setupPaperOnboardingView() {
         let onboarding = PaperOnboarding()
         onboarding.delegate = self
@@ -44,11 +43,11 @@ extension OnBoardingController {
             view.addConstraint(constraint)
         }
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        self.skipButton.snp.remakeConstraints { (make) in
+
+        skipButton.snp.remakeConstraints { make in
             make.right.equalTo(view.snp.right).offset(-15)
             make.top.equalTo(view.snp.top).offset(50)
             make.size.equalTo(CGSize(width: 80, height: 40))

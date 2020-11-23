@@ -11,32 +11,33 @@ import UIKit
 
 extension UITableView {
     // MARK: - Cell register and reuse
+
     /**
      Register cell nib
-     
+
      - parameter aClass: class
      */
     func registerCellNib<T: UITableViewCell>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         let nib = UINib(nibName: name, bundle: nil)
-        self.register(nib, forCellReuseIdentifier: name)
+        register(nib, forCellReuseIdentifier: name)
     }
-    
+
     /**
      Register cell class
-     
+
      - parameter aClass: class
      */
     func registerCellClass<T: UITableViewCell>(_ aClass: T.Type) {
         let name = String(describing: aClass)
-        self.register(aClass, forCellReuseIdentifier: name)
+        register(aClass, forCellReuseIdentifier: name)
     }
-    
+
     /**
      Reusable Cell
-     
+
      - parameter aClass:    class
-     
+
      - returns: cell
      */
     func dequeueReusableCell<T: UITableViewCell>(_ aClass: T.Type) -> T! {
@@ -46,34 +47,35 @@ extension UITableView {
         }
         return cell
     }
-    
+
     // MARK: - HeaderFooter register and reuse
+
     /**
      Register cell nib
-     
+
      - parameter aClass: class
      */
     func registerHeaderFooterNib<T: UIView>(_ aClass: T.Type) {
         let name = String(describing: aClass)
         let nib = UINib(nibName: name, bundle: nil)
-        self.register(nib, forHeaderFooterViewReuseIdentifier: name)
+        register(nib, forHeaderFooterViewReuseIdentifier: name)
     }
-    
+
     /**
      Register cell class
-     
+
      - parameter aClass: class
      */
     func registerHeaderFooterClass<T: UIView>(_ aClass: T.Type) {
         let name = String(describing: aClass)
-        self.register(aClass, forHeaderFooterViewReuseIdentifier: name)
+        register(aClass, forHeaderFooterViewReuseIdentifier: name)
     }
-    
+
     /**
      Reusable Cell
-     
+
      - parameter aClass:    class
-     
+
      - returns: cell
      */
     func dequeueReusableHeaderFooter<T: UIView>(_ aClass: T.Type) -> T! {
@@ -83,7 +85,4 @@ extension UITableView {
         }
         return cell
     }
-    
 }
-
-

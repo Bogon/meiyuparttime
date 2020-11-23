@@ -9,7 +9,5 @@
 import Foundation
 
 extension Date {
-    var millisecond: TimeInterval {
-        get { return self.timeIntervalSince1970 * 1000 }
-    }
+    var millisecond: TimeInterval { return timeIntervalSince1970 * 1000 }
 }
